@@ -26,7 +26,7 @@ public:
         for (int i = 0; i < nums.size(); i++) {
             mp[nums[i]] += 1;
             if (mp[nums[i]] > floor(nums.size()/2)) {
-                mp.clear();
+                mp.clear(); //not important
                 return nums[i];
             }
         }
