@@ -25,3 +25,30 @@ vector<int> postorderTraversal(TreeNode *root)
     }
     return ans;
 }
+
+//iterative approach
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode* root) {
+        vector<int>ans;
+        if(root == NULL){
+            return ans;
+        }
+        stack<TreeNode*>s;
+        s.push(root);
+
+        while(!s.empty()){
+            TreeNode* curr = s.top();
+            ans.push_back(curr->val);
+            s.pop();
+            if(curr->right != NULL){
+                s.push(curr->right);
+            }
+            if(curr->left != NULL){
+                s.push(curr->left);
+            }
+           
+        }
+        return ans;
+    }
+};
